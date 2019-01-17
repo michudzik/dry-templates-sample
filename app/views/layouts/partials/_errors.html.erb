@@ -1,0 +1,15 @@
+<%- if @errors %>
+  <section class="section">
+    <div class="container">
+      <div class="columns columns-container is-centered">
+        <div class="is-3 is-offset-3">
+          <ul>
+            <%- @errors.each do |error| %>
+              <li><%= error %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+<% end %>

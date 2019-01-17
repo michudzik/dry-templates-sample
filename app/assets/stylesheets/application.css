@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+.columns-container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 35px;
+}

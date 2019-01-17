@@ -2,6 +2,7 @@ module Users
   class Update < ApplicationTransaction
     try :find, catch: ActiveRecord::RecordNotFound
     map :update_attributes
+    check :validate
     try :save, catch: ActiveRecord::RecordInvalid
 
     def find(params)
@@ -10,6 +11,11 @@ module Users
 
     def update_attributes(params)
       params[:record].assign_attributes(params[:attributes])
+      params[:record]
+    end
+
+    def validate(record)
+      record.valid?
     end
 
     def save(record)
